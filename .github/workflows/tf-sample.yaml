@@ -1,7 +1,6 @@
 name: Terraform - Basic
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
