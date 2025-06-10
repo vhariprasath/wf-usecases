@@ -6,8 +6,8 @@ on:
 jobs:
   run-python:
     runs-on: ubuntu-latest
-    # env:
-    #   BUCKET_NAME: ${{ vars.BUCKET_NAME }}
+    env:
+      BUCKET_NAME: ${{ vars.BUCKET_NAME }}
     environment: dev
 
     steps:
