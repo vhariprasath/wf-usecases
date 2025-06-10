@@ -1,4 +1,4 @@
-name: Terraform Pipeline - V1
+name: Terraform Pipeline - V2
 
 on:
   push:
