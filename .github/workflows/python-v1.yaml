@@ -1,0 +1,24 @@
+name: Python App - V1
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+    env:
+      BUCKET_NAME: ${{ vars.BUCKET_NAME }}
+    environment: dev
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.10
+
+      - name: Run Python script
+        run: python app/app.py
