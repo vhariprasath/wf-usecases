@@ -1,7 +1,6 @@
 name: Terraform Pipeline - V3
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
