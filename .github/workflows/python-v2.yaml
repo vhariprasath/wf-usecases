@@ -1,7 +1,6 @@
 name: Python App - V2
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
