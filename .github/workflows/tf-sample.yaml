@@ -1,0 +1,19 @@
+name: Terraform - Basic
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  terraform-print:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1 - Print Terraform Init
+        run: echo "terraform init"
+
+      - name: Step 2 - Print Terraform Plan
+        run: echo "terraform plan"
+
+      - name: Step 3 - Print Terraform Apply
+        run: echo "terraform apply -auto-approve"
