@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  terraform-print:
+  terraform-job:
     runs-on: ubuntu-latest
 
     steps:
