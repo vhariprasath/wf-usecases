@@ -6,7 +6,7 @@ on:
 jobs:
   terraform-init:
     runs-on: ubuntu-latest
-    environment: dev
+    environment: dev-init-plan
     steps:
       - name: Print Terraform Init
         run: echo "terraform init -backend-config=\"bucket=${{ vars.BUCKET_NAME }}\""
