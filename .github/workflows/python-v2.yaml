@@ -1,0 +1,31 @@
+name: Python App - V2
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  run-python:
+    runs-on: windows-latest
+    environment: dev
+    env:
+      VARS_CONTEXT: ${{ toJson(vars) }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Set env vars from vars context JSON (Windows)
+        run: |
+          $varsContext = $env:VARS_CONTEXT | ConvertFrom-Json
+          foreach ($key in $varsContext.PSObject.Properties.Name) {
+            "$key=$($varsContext.$key)" | Out-File -Append -Encoding utf8 $env:GITHUB_ENV
+          }
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Run Python script
+        run: python app/app.py
